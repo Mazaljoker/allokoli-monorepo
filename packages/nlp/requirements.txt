@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+langchain
+langchain-community
+langchain-openai
+openai
+# Pour Ollama (Mistral 7B local)
+ollama

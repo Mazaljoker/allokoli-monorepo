@@ -1,0 +1,15 @@
+{
+  "name": "allokoli-monorepo",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n frontend,gateway -c blue,green \"pnpm --filter ./apps/frontend dev\" \"pnpm --filter ./apps/gateway dev\"",
+    "build": "",
+    "lint": "",
+    "format": ""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0",
+    "pnpm": "^8.0.0",
+    "ts-node": "^10.9.2"
+  }
+}

@@ -1,0 +1,18 @@
+/* TODO: ce fichier ne doit contenir que des imports & overrides spécifiques */
+@import url('https://fonts.cdnfonts.com/css/satoshi');
+@import "./styles/tokens/css-variables.css";
+@import "./styles/base.css";
+@import "./styles/utilities.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* variables :root si tu n’as pas encore tout migré dans tailwind.config.js */
+:root {
+  --colors-brand: #435175;
+  --colors-brandAccent: #5b6a91;
+  /* …autres couleurs si tu en as besoin côté JS */
+}
+/* === DEBUG GRID (à supprimer quand c’est réglé) === */
+.debug-grid   { outline: 2px dashed red !important; }
+.debug-column { outline: 2px solid blue !important; }

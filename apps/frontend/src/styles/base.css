@@ -1,0 +1,17 @@
+@tailwind base;
+@layer base {
+  *,::before,::after { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    @apply bg-[color:var(--hot-coral-background)]
+           text-[color:var(--hot-coral-text)]
+           font-sans antialiased;
+  }
+  a {
+    @apply text-[color:var(--hot-coral-rose)] underline-offset-2;
+  }
+  a:hover {
+    @apply text-[color:var(--hot-coral-rose)];
+    filter: brightness(1.1);
+  }
+}
