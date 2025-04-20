@@ -17,7 +17,9 @@ export default function UserProfile() {
   useEffect(() => {
     const fetchUser = async () => {
       setLoading(true);
-      const { data: { user } } = await supabase.auth.getUser();
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
       if (user) {
         setUser(user);
         setEmail(user.email);
@@ -39,7 +41,9 @@ export default function UserProfile() {
     fetchUser();
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
     setProfile({ ...profile, [e.target.name]: e.target.value });
   };
 
@@ -71,10 +75,14 @@ export default function UserProfile() {
 
   return (
     <div className="max-w-md mx-auto bg-[#FFFFFF] rounded shadow-[0_4px_12px_rgba(30,30,36,0.07)] p-6 mt-8">
-      <h2 className="text-xl font-bold mb-4 text-[#1E1E24]">Profil utilisateur</h2>
+      <h2 className="text-xl font-bold mb-4 text-[#1E1E24]">
+        Profil utilisateur
+      </h2>
       <form onSubmit={handleUpdate} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium mb-1 text-[#1E1E24]">Email</label>
+          <label className="block text-sm font-medium mb-1 text-[#1E1E24]">
+            Email
+          </label>
           <input
             type="email"
             value={email}
@@ -83,7 +91,9 @@ export default function UserProfile() {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1 text-[#1E1E24]">Nom complet</label>
+          <label className="block text-sm font-medium mb-1 text-[#1E1E24]">
+            Nom complet
+          </label>
           <input
             type="text"
             name="nom_complet"
@@ -93,15 +103,19 @@ export default function UserProfile() {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1 text-[#1E1E24]">Langue</label>
+          <label className="block text-sm font-medium mb-1 text-[#1E1E24]">
+            Langue
+          </label>
           <select
             name="langue"
             value={profile.langue}
             onChange={handleChange}
             className="w-full border border-[#9EA1A9] rounded px-3 py-2 bg-[#F9F9FA] text-[#1E1E24] focus:outline-none focus:ring-2 focus:ring-[#FF8AB0] focus:border-[#F50057]"
           >
-            {LANG_OPTIONS.map(opt => (
-              <option key={opt.value} value={opt.value}>{opt.label}</option>
+            {LANG_OPTIONS.map((opt) => (
+              <option key={opt.value} value={opt.value}>
+                {opt.label}
+              </option>
             ))}
           </select>
         </div>

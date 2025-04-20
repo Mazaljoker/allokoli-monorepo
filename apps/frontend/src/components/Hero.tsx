@@ -1,24 +1,24 @@
-import React, { Suspense, lazy } from 'react';
-import { motion } from 'framer-motion';
-import { Check, ArrowRight } from 'lucide-react';
-import Section from './Section';
+import React, { Suspense, lazy } from "react";
+import { motion } from "framer-motion";
+import { Check, ArrowRight } from "lucide-react";
+import Section from "./Section";
 
 // Lazy load AuthForm
-const AuthForm = lazy(() => import('./AuthForm'));
+const AuthForm = lazy(() => import("./AuthForm"));
 
 // Animation synchronisée Hero (staggerChildren)
 const heroStagger = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.18
-    }
-  }
+      staggerChildren: 0.18,
+    },
+  },
 };
 
 const heroItem = {
   hidden: { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
 };
 
 const Hero = () => {
@@ -39,7 +39,10 @@ const Hero = () => {
           >
             <motion.div variants={heroItem}>
               <h1 className="text-5xl font-bold leading-tight">
-                Gagnez du temps&nbsp;: <span className="text-primary">déployez votre agent IA multicanal en 5 minutes</span>
+                Gagnez du temps&nbsp;:{" "}
+                <span className="text-primary">
+                  déployez votre agent IA multicanal en 5 minutes
+                </span>
               </h1>
               <p className="mt-4 text-xl text-gray-600">
                 Plateforme simple, rapide et 100% RGPD.
@@ -51,7 +54,11 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
             >
-              {['Aucun code requis', 'Déploiement instantané', 'Support 24/7'].map((feat, i) => (
+              {[
+                "Aucun code requis",
+                "Déploiement instantané",
+                "Support 24/7",
+              ].map((feat, i) => (
                 <motion.li
                   key={i}
                   variants={heroItem}
@@ -65,10 +72,10 @@ const Hero = () => {
             <motion.div variants={heroItem}>
               <motion.button
                 className="mt-8 bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-lg transition w-full font-semibold focus-visible:outline-primary flex items-center gap-2"
-                onClick={() => window.location.hash = '#signup'}
+                onClick={() => (window.location.hash = "#signup")}
                 whileHover={{
                   scale: 1.05,
-                  transition: { type: "spring", stiffness: 300, damping: 10 }
+                  transition: { type: "spring", stiffness: 300, damping: 10 },
                 }}
                 whileTap={{ scale: 0.97 }}
                 aria-label="Commencer maintenant avec AlloKoli"
@@ -82,11 +89,12 @@ const Hero = () => {
           {/* Right column - Signup form */}
           <div className="lg:col-span-4 lg:col-start-8 w-full flex justify-center">
             <div className="w-full max-w-[440px] rounded-2xl bg-white shadow-xl ring-1 ring-black/5 p-8 space-y-6">
-              <h2 className="text-2xl font-semibold text-primary mb-4">Créer un compte</h2>
+              <h2 className="text-2xl font-semibold text-primary mb-4">
+                Créer un compte
+              </h2>
               <Suspense fallback={<div>Chargement...</div>}>
                 <AuthForm />
               </Suspense>
-              
             </div>
           </div>
         </div>
@@ -97,4 +105,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

@@ -23,7 +23,7 @@ npm install
 The `requireAuth` middleware can be used to protect routes that require authentication. It verifies the JWT and adds the user object to the request.
 
 ```typescript
-import { requireAuth } from './src/middleware/jwtMiddleware';
+import { requireAuth } from "./src/middleware/jwtMiddleware";
 ```
 
 ### Service Functions
@@ -38,7 +38,7 @@ The package includes service functions to interact with user data:
 The package provides a route handler for the `/api/me` endpoint, which returns the authenticated user's information.
 
 ```typescript
-import { authRoutes } from './src/routes/authRoutes';
+import { authRoutes } from "./src/routes/authRoutes";
 ```
 
 ## Contributing

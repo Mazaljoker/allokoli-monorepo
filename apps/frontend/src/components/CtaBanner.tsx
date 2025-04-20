@@ -1,7 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-import Section from './Section';
+import React from "react";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import Section from "./Section";
 
 // Animation component
 function FadeIn({ children }: { children: React.ReactNode }) {
@@ -32,16 +32,16 @@ const CtaBanner = () => {
             className="mx-auto flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-2xl hover:bg-gray-100 transition-colors"
             type="button"
             onClick={() => {
-              const el = document.getElementById('signup');
+              const el = document.getElementById("signup");
               if (el) {
-                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                el.scrollIntoView({ behavior: "smooth", block: "center" });
               } else {
-                window.location.hash = '#signup';
+                window.location.hash = "#signup";
               }
             }}
             whileHover={{
               scale: 1.05,
-              transition: { type: "spring", stiffness: 300, damping: 10 }
+              transition: { type: "spring", stiffness: 300, damping: 10 },
             }}
             whileTap={{ scale: 0.97 }}
             aria-label="Commencer maintenant avec AlloKoli"

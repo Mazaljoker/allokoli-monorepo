@@ -1,9 +1,9 @@
 :root {
-  --hot-coral-orange: #FF7043;
-  --hot-coral-rose: #FF4081;
-  --hot-coral-background: #FFF3E0;
+  --hot-coral-orange: #ff7043;
+  --hot-coral-rose: #ff4081;
+  --hot-coral-background: #fff3e0;
   --hot-coral-text: #212121;
-  --hot-coral-shadow: #BDBDBD;
+  --hot-coral-shadow: #bdbdbd;
 
   --spacing-xs: 4px;
   --spacing-sm: 8px;
@@ -12,7 +12,7 @@
   --spacing-xl: 32px;
   --spacing-2xl: 48px;
 
-  --font-family-sans: 'Satoshi', sans-serif;
+  --font-family-sans: "Satoshi", sans-serif;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;

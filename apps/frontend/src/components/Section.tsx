@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 type SectionProps = {
   children: React.ReactNode;
@@ -10,12 +10,14 @@ type SectionProps = {
  * Reusable Section component that provides consistent vertical padding
  * and container wrapping for content sections.
  */
-const Section: React.FC<SectionProps> = ({ children, className = '', fullWidth = false }) => {
+const Section: React.FC<SectionProps> = ({
+  children,
+  className = "",
+  fullWidth = false,
+}) => {
   return (
     <section className={`py-24 ${className}`}>
-      <div className={`${fullWidth ? 'w-full' : 'container'}`}>
-        {children}
-      </div>
+      <div className={`${fullWidth ? "w-full" : "container"}`}>{children}</div>
     </section>
   );
 };

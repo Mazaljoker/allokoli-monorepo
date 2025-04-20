@@ -1,15 +1,21 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import Section from './Section';
+import React from "react";
+import { motion } from "framer-motion";
+import Section from "./Section";
 
 // Animation d'apparition pour Stats
 const statsSectionVariants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } }
+  visible: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
 // FadeIn component for staggered animations
-function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+function FadeIn({
+  children,
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  delay?: number;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
@@ -23,10 +29,10 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 }
 
 const stats = [
-  { value: '5min', label: 'Temps de déploiement' },
-  { value: '99.9%', label: 'Disponibilité' },
-  { value: '+40%', label: 'Satisfaction client' },
-  { value: '-60%', label: 'Coûts opérationnels' },
+  { value: "5min", label: "Temps de déploiement" },
+  { value: "99.9%", label: "Disponibilité" },
+  { value: "+40%", label: "Satisfaction client" },
+  { value: "-60%", label: "Coûts opérationnels" },
 ];
 
 const Stats = () => {
@@ -42,7 +48,9 @@ const Stats = () => {
         {stats.map((stat, index) => (
           <FadeIn key={index} delay={index * 0.1}>
             <div className="text-center">
-              <h3 className="text-3xl font-bold text-primary mb-2">{stat.value}</h3>
+              <h3 className="text-3xl font-bold text-primary mb-2">
+                {stat.value}
+              </h3>
               <p className="text-sm text-gray-500">{stat.label}</p>
             </div>
           </FadeIn>

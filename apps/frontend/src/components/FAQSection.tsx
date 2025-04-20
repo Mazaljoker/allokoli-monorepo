@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronUp } from 'lucide-react';
-import Section from './Section';
-import SectionTitle from './SectionTitle';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import Section from "./Section";
+import SectionTitle from "./SectionTitle";
 
 // Animation component
-function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+function FadeIn({
+  children,
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  delay?: number;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
@@ -22,20 +28,24 @@ const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const faqs = [
     {
-      question: 'Comment fonctionne AlloKoli ?',
-      answer: 'AlloKoli utilise une IA avancée pour comprendre et répondre aux questions de vos clients en langage naturel, par téléphone ou chat.',
+      question: "Comment fonctionne AlloKoli ?",
+      answer:
+        "AlloKoli utilise une IA avancée pour comprendre et répondre aux questions de vos clients en langage naturel, par téléphone ou chat.",
     },
     {
-      question: 'Combien de temps pour la mise en place ?',
-      answer: 'La configuration initiale prend moins de 30 minutes. Notre équipe vous accompagne pour une intégration optimale.',
+      question: "Combien de temps pour la mise en place ?",
+      answer:
+        "La configuration initiale prend moins de 30 minutes. Notre équipe vous accompagne pour une intégration optimale.",
     },
     {
-      question: 'Quelles langues sont supportées ?',
-      answer: "AlloKoli supporte plus de 20 langues, dont le français, l'anglais, l'espagnol, l'allemand, et bien d'autres.",
+      question: "Quelles langues sont supportées ?",
+      answer:
+        "AlloKoli supporte plus de 20 langues, dont le français, l'anglais, l'espagnol, l'allemand, et bien d'autres.",
     },
     {
-      question: 'Est-ce personnalisable ?',
-      answer: "Oui, vous pouvez personnaliser la voix, le ton, les réponses et l'intégrer à vos outils existants.",
+      question: "Est-ce personnalisable ?",
+      answer:
+        "Oui, vous pouvez personnaliser la voix, le ton, les réponses et l'intégrer à vos outils existants.",
     },
   ];
 
@@ -59,7 +69,7 @@ const FAQSection = () => {
               {openIndex === i && (
                 <motion.dd
                   initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
+                  animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.3 }}
                   className="pb-4 text-gray-600"

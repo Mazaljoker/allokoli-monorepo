@@ -1,5 +1,7 @@
 # Allo Koli (MVP)
 
+![Release Version](https://img.shields.io/github/v/release/your-repo/your-project)
+
 ## 1. Présentation
 
 Allo Koli est une plateforme SaaS no-code permettant de créer en 5 minutes un agent vocal IA multilingue, capable de répondre à l’oral à vos clients. L’agent est automatiquement attribué à un numéro Twilio et s’appuie sur les dernières avancées en ASR, NLP et TTS.
@@ -28,10 +30,12 @@ Allo Koli est une plateforme SaaS no-code permettant de créer en 5 minutes un a
 ## 4. Démarrage local (dev setup)
 
 Prérequis :
+
 - Node.js >= 18
 - PNPM
 
 Installation :
+
 ```bash
 pnpm install
 ```
@@ -39,6 +43,7 @@ pnpm install
 ### Script de développement Vite
 
 Un script `dev` est disponible pour lancer Vite en mode développement :
+
 ```bash
 pnpm dev
 ```
@@ -46,9 +51,11 @@ pnpm dev
 ## 5. Démo rapide en local
 
 Lancez le frontend et la gateway en mode développement :
+
 ```bash
 pnpm dev
 ```
+
 Attribuez un numéro Twilio (voir documentation interne), puis appelez ce numéro pour tester l’agent vocal IA.
 
 ## 6. Structure du monorepo

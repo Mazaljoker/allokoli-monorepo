@@ -1,7 +1,13 @@
 @tailwind base;
 @layer base {
-  *,::before,::after { box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-[color:var(--hot-coral-background)]
            text-[color:var(--hot-coral-text)]

@@ -1,27 +1,27 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
-import { Bot, ArrowRight, Check } from 'lucide-react';
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { Bot, ArrowRight, Check } from "lucide-react";
 import { supabase } from "../lib/supabase";
 
 // Import section components
-import Stats from './Stats';
-import Features from './Features';
-import UseCases from './UseCases';
-import Steps from './Steps';
-import Testimonials from './Testimonials';
-import FAQSection from './FAQSection';
-import CtaBanner from './CtaBanner';
-import SignUpCard from './SignUpCard';
-import Button from './ui/Button';
+import Stats from "./Stats";
+import Features from "./Features";
+import UseCases from "./UseCases";
+import Steps from "./Steps";
+import Testimonials from "./Testimonials";
+import FAQSection from "./FAQSection";
+import CtaBanner from "./CtaBanner";
+import SignUpCard from "./SignUpCard";
+import Button from "./ui/Button";
 
 export default function LandingPage() {
   const navigate = useNavigate();
-  
+
   // Auth redirect
   useEffect(() => {
     const { data: listener } = supabase.auth.onAuthStateChange((e, session) => {
-      if (e === 'SIGNED_IN' && session) navigate('/dashboard');
+      if (e === "SIGNED_IN" && session) navigate("/dashboard");
     });
     return () => listener.subscription.unsubscribe();
   }, [navigate]);
@@ -30,10 +30,17 @@ export default function LandingPage() {
     <>
       <Helmet>
         <title>AlloKoli – Agents IA Vocaux & Textuels No Code</title>
-        <meta name="description" content="Créez et déployez vos assistants IA en moins de 5 minutes, multicanal, RGPD, aucun code requis." />
+        <meta
+          name="description"
+          content="Créez et déployez vos assistants IA en moins de 5 minutes, multicanal, RGPD, aucun code requis."
+        />
         <html lang="fr" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
         <style>
           {`
             @import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap');
@@ -49,9 +56,10 @@ export default function LandingPage() {
             <span className="sr-only">AlloKoli</span>
             <span className="text-2xl">AlloKoli</span>
           </div>
-          <Button 
+          <Button
             className="bg-[#435175] hover:bg-[#5b6a91] text-white px-6 py-2 rounded-lg transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#6A0DAD]"
-            onClick={() => window.location.hash = '#signup'}>
+            onClick={() => (window.location.hash = "#signup")}
+          >
             Essayer Gratuitement
           </Button>
         </div>
@@ -65,10 +73,12 @@ export default function LandingPage() {
               {/* Left Column: Text and CTA */}
               <div className="lg:col-span-5 lg:col-start-2 w-full space-y-6">
                 <h1 className="text-5xl/tight lg:text-6xl font-extrabold">
-                  Créez vos assistants IA en <span className="text-[#435175]">quelques minutes</span>
+                  Créez vos assistants IA en{" "}
+                  <span className="text-[#435175]">quelques minutes</span>
                 </h1>
                 <p className="mt-6 max-w-prose text-lg text-[#4a4a4a]">
-                  Déployez des agents vocaux et textuels puissants sans code, compatibles RGPD et instantanément intégrables.
+                  Déployez des agents vocaux et textuels puissants sans code,
+                  compatibles RGPD et instantanément intégrables.
                 </p>
                 <ul className="mt-8 space-y-3">
                   <li className="flex items-start gap-2">
@@ -77,7 +87,9 @@ export default function LandingPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="text-green-600 mt-1" size={20} />
-                    <span>Intégration multi-canal (web, téléphone, WhatsApp)</span>
+                    <span>
+                      Intégration multi-canal (web, téléphone, WhatsApp)
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="text-green-600 mt-1" size={20} />
@@ -85,14 +97,16 @@ export default function LandingPage() {
                   </li>
                 </ul>
                 <div className="mt-10">
-                  <Button 
+                  <Button
                     size="lg"
-                    className="bg-[#435175] hover:bg-[#5b6a91] text-white px-8 py-3 rounded-lg transition-colors font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#6A0DAD]">
-                    Commencer Maintenant <ArrowRight className="ml-2" size={18} />
+                    className="bg-[#435175] hover:bg-[#5b6a91] text-white px-8 py-3 rounded-lg transition-colors font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#6A0DAD]"
+                  >
+                    Commencer Maintenant{" "}
+                    <ArrowRight className="ml-2" size={18} />
                   </Button>
                 </div>
               </div>
-              
+
               {/* Right Column: Sign Up Card */}
               <div className="lg:col-span-4 lg:col-start-8 w-full">
                 <SignUpCard />
@@ -120,7 +134,8 @@ export default function LandingPage() {
                 <span className="text-xl font-bold text-primary">AlloKoli</span>
               </div>
               <p className="text-gray-600">
-                Transformez vos interactions client avec l'intelligence artificielle.
+                Transformez vos interactions client avec l'intelligence
+                artificielle.
               </p>
             </div>
             <div>

@@ -1,5 +1,5 @@
 /* TODO: ce fichier ne doit contenir que des imports & overrides spécifiques */
-@import url('https://fonts.cdnfonts.com/css/satoshi');
+@import url("https://fonts.cdnfonts.com/css/satoshi");
 @import "./styles/tokens/css-variables.css";
 @import "./styles/base.css";
 @import "./styles/utilities.css";
@@ -14,5 +14,9 @@
   /* …autres couleurs si tu en as besoin côté JS */
 }
 /* === DEBUG GRID (à supprimer quand c’est réglé) === */
-.debug-grid   { outline: 2px dashed red !important; }
-.debug-column { outline: 2px solid blue !important; }
+.debug-grid {
+  outline: 2px dashed red !important;
+}
+.debug-column {
+  outline: 2px solid blue !important;
+}

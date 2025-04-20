@@ -56,7 +56,9 @@ const AgentWizard: React.FC = () => {
         />
       </div>
       <div>
-        <label className="block mb-1 font-medium text-[#1E1E24]">Secteur d'activité</label>
+        <label className="block mb-1 font-medium text-[#1E1E24]">
+          Secteur d'activité
+        </label>
         <input
           type="text"
           className="w-full border border-[#9EA1A9] rounded px-3 py-2 bg-[#F9F9FA] text-[#1E1E24] focus:outline-none focus:ring-2 focus:ring-[#FFA76C]"

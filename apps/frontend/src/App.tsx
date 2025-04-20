@@ -1,12 +1,10 @@
-import React from 'react';
-import LandingPage from './components/LandingPage';
+import React from "react";
+import LandingPage from "./components/LandingPage";
 
 console.log("App.tsx loaded");
 
 function App() {
-  return (
-    <LandingPage />
-  );
+  return <LandingPage />;
 }
 
 export default App;

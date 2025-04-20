@@ -1,32 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Section from './Section';
-import SectionTitle from './SectionTitle';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Section from "./Section";
+import SectionTitle from "./SectionTitle";
 
 const testimonials = [
   {
-    name: 'Marie Dubois',
-    role: 'Directrice Service Client',
-    company: 'TechVision',
-    content: 'AlloKoli a transformé notre service client. La qualité des interactions est remarquable.',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
-    alt: 'Portrait de Marie Dubois',
+    name: "Marie Dubois",
+    role: "Directrice Service Client",
+    company: "TechVision",
+    content:
+      "AlloKoli a transformé notre service client. La qualité des interactions est remarquable.",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+    alt: "Portrait de Marie Dubois",
   },
   {
-    name: 'Thomas Bernard',
-    role: 'CEO',
-    company: 'InnovTech',
-    content: 'Une solution innovante qui nous a permis de réduire nos coûts de 40% tout en améliorant la satisfaction client.',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop',
-    alt: 'Portrait de Thomas Bernard',
+    name: "Thomas Bernard",
+    role: "CEO",
+    company: "InnovTech",
+    content:
+      "Une solution innovante qui nous a permis de réduire nos coûts de 40% tout en améliorant la satisfaction client.",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+    alt: "Portrait de Thomas Bernard",
   },
   {
-    name: 'Sophie Martin',
-    role: 'Responsable Innovation',
-    company: 'DataFrance',
-    content: "L'intégration a été simple et les résultats sont au-delà de nos attentes.",
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop',
-    alt: 'Portrait de Sophie Martin',
+    name: "Sophie Martin",
+    role: "Responsable Innovation",
+    company: "DataFrance",
+    content:
+      "L'intégration a été simple et les résultats sont au-delà de nos attentes.",
+    image:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
+    alt: "Portrait de Sophie Martin",
   },
 ];
 
@@ -34,7 +40,10 @@ const Testimonials = () => {
   // Testimonial carousel
   const [idx, setIdx] = useState(0);
   useEffect(() => {
-    const t = setInterval(() => setIdx((p) => (p + 1) % testimonials.length), 4000);
+    const t = setInterval(
+      () => setIdx((p) => (p + 1) % testimonials.length),
+      4000,
+    );
     return () => clearInterval(t);
   }, []);
 
@@ -60,14 +69,18 @@ const Testimonials = () => {
                     className="w-16 h-16 rounded-full object-cover"
                   />
                   <div>
-                    <h3 className="text-lg font-semibold text-primary">{testimonial.name}</h3>
+                    <h3 className="text-lg font-semibold text-primary">
+                      {testimonial.name}
+                    </h3>
                     <p className="text-gray-600">{testimonial.role}</p>
                     <p className="text-primary">{testimonial.company}</p>
                   </div>
                 </div>
-                <p className="text-gray-600 text-lg italic">"{testimonial.content}"</p>
+                <p className="text-gray-600 text-lg italic">
+                  "{testimonial.content}"
+                </p>
               </motion.div>
-            ) : null
+            ) : null,
           )}
         </AnimatePresence>
       </div>

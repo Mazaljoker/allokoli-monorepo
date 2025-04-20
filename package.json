@@ -4,12 +4,23 @@
   "scripts": {
     "dev": "concurrently -n frontend,gateway -c blue,green \"pnpm --filter ./apps/frontend dev\" \"pnpm --filter ./apps/gateway dev\"",
     "build": "",
-    "lint": "",
-    "format": ""
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --max-warnings=0",
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "concurrently": "^8.0.0",
+    "eslint": "^9.25.0",
     "pnpm": "^8.0.0",
+    "prettier": "^3.5.3",
     "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "supertest": "^7.1.0",
+    "ts-jest": "^29.3.2",
+    "vitest": "^3.1.1"
   }
 }

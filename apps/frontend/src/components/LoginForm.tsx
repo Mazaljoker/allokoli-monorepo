@@ -1,26 +1,26 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Lock, AlertCircle } from 'lucide-react';
-import { supabase } from '../lib/supabase';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, Lock, AlertCircle } from "lucide-react";
+import { supabase } from "../lib/supabase";
+import { Link } from "react-router-dom";
 
 // Nouvelle palette Givati Tech
 const COLORS = {
-  background: "#FFFFFF",        // Fond global (body)
-  surface: "#F8F8FB",           // Cartes, inputs
-  primary: "#6A0DAD",           // Boutons CTA, titres
-  primaryHover: "#4A0A7F",      // Hover / focus CTA
-  secondary: "#B07FD9",         // Surfaces secondaires (décoratives)
-  accent: "#D2B48C",            // Accent doux (sable)
-  accentDark: "#586D46",        // Accent sombre (olive)
-  text: "#1E1E24",              // Texte principal
-  textInverted: "#FFFFFF",      // Texte sur fond violet
-  shadow: "rgba(30,30,36,0.07)" // Ombres douces
+  background: "#FFFFFF", // Fond global (body)
+  surface: "#F8F8FB", // Cartes, inputs
+  primary: "#6A0DAD", // Boutons CTA, titres
+  primaryHover: "#4A0A7F", // Hover / focus CTA
+  secondary: "#B07FD9", // Surfaces secondaires (décoratives)
+  accent: "#D2B48C", // Accent doux (sable)
+  accentDark: "#586D46", // Accent sombre (olive)
+  text: "#1E1E24", // Texte principal
+  textInverted: "#FFFFFF", // Texte sur fond violet
+  shadow: "rgba(30,30,36,0.07)", // Ombres douces
 };
 
 export default function LoginForm() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -34,10 +34,10 @@ export default function LoginForm() {
         email,
         password,
       });
-      
+
       if (error) throw error;
     } catch (err: any) {
-      setError(err.message || 'Une erreur est survenue lors de la connexion');
+      setError(err.message || "Une erreur est survenue lors de la connexion");
     } finally {
       setLoading(false);
     }
@@ -51,7 +51,9 @@ export default function LoginForm() {
       className="max-w-md mx-auto p-6 bg-white rounded-xl shadow-md"
     >
       <div className="text-center mb-6">
-        <div className={`inline-flex items-center space-x-2 text-[${COLORS.primary}] mb-2`}>
+        <div
+          className={`inline-flex items-center space-x-2 text-[${COLORS.primary}] mb-2`}
+        >
           <Lock className="h-5 w-5" aria-hidden />
           <h2 className="text-xl font-semibold">Connexion</h2>
         </div>
@@ -61,15 +63,23 @@ export default function LoginForm() {
       </div>
 
       {error && (
-        <div className={`p-3 rounded-lg bg-red-50 text-red-700 flex items-start mb-4`}>
-          <AlertCircle className="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" aria-hidden />
+        <div
+          className={`p-3 rounded-lg bg-red-50 text-red-700 flex items-start mb-4`}
+        >
+          <AlertCircle
+            className="h-5 w-5 mr-2 flex-shrink-0 mt-0.5"
+            aria-hidden
+          />
           <span>{error}</span>
         </div>
       )}
 
       <form onSubmit={handleLogin} className="space-y-4">
         <div>
-          <label htmlFor="email" className={`block text-sm font-medium text-[${COLORS.text}] mb-1`}>
+          <label
+            htmlFor="email"
+            className={`block text-sm font-medium text-[${COLORS.text}] mb-1`}
+          >
             Email
           </label>
           <input
@@ -84,7 +94,10 @@ export default function LoginForm() {
         </div>
 
         <div>
-          <label htmlFor="password" className={`block text-sm font-medium text-[${COLORS.text}] mb-1`}>
+          <label
+            htmlFor="password"
+            className={`block text-sm font-medium text-[${COLORS.text}] mb-1`}
+          >
             Mot de passe
           </label>
           <input
@@ -99,7 +112,10 @@ export default function LoginForm() {
         </div>
 
         <div className="flex justify-end">
-          <Link to="/forgot-password" className={`text-sm text-[${COLORS.primary}] hover:underline`}>
+          <Link
+            to="/forgot-password"
+            className={`text-sm text-[${COLORS.primary}] hover:underline`}
+          >
             Mot de passe oublié ?
           </Link>
         </div>
@@ -123,8 +139,11 @@ export default function LoginForm() {
 
         <div className="text-center text-sm mt-4">
           <p className="text-gray-600">
-            Vous n'avez pas de compte ?{' '}
-            <Link to="/signup" className={`text-[${COLORS.primary}] hover:underline`}>
+            Vous n'avez pas de compte ?{" "}
+            <Link
+              to="/signup"
+              className={`text-[${COLORS.primary}] hover:underline`}
+            >
               Créer un compte
             </Link>
           </p>

@@ -1,11 +1,17 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Headset, Users, Laptop2 } from 'lucide-react';
-import Section from './Section';
-import SectionTitle from './SectionTitle';
+import React from "react";
+import { motion } from "framer-motion";
+import { Headset, Users, Laptop2 } from "lucide-react";
+import Section from "./Section";
+import SectionTitle from "./SectionTitle";
 
 // Animation component
-function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+function FadeIn({
+  children,
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  delay?: number;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
@@ -21,19 +27,19 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 // Cas d'usage data
 const useCases = [
   {
-    title: 'Service Après-Vente (SAV)',
+    title: "Service Après-Vente (SAV)",
     description:
       "Automatisez la gestion des demandes clients, le suivi des tickets et la résolution des problèmes courants 24/7, tout en offrant une expérience personnalisée.",
     icon: Headset,
   },
   {
-    title: 'Ressources Humaines (RH)',
+    title: "Ressources Humaines (RH)",
     description:
       "Répondez instantanément aux questions des collaborateurs sur la paie, les congés ou les procédures internes, et simplifiez l'onboarding des nouveaux employés.",
     icon: Users,
   },
   {
-    title: 'Support IT',
+    title: "Support IT",
     description:
       "Gérez les incidents techniques, guidez les utilisateurs dans le dépannage et automatisez la création de tickets pour une assistance informatique efficace.",
     icon: Laptop2,
@@ -45,8 +51,8 @@ const cardHover = {
   hover: {
     scale: 1.05,
     boxShadow: `0 8px 32px 0 rgba(30,30,36,0.07), 0 1.5px 6px 0 rgba(30,30,36,0.07)`,
-    transition: { type: "spring", stiffness: 220, damping: 16 }
-  }
+    transition: { type: "spring", stiffness: 220, damping: 16 },
+  },
 };
 
 const UseCases = () => {
@@ -60,7 +66,11 @@ const UseCases = () => {
         viewport={{ once: true, amount: 0.6 }}
         variants={{
           hidden: { opacity: 0, y: 32 },
-          visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.7, ease: "easeOut" },
+          },
         }}
       >
         Découvrez comment AlloKoli s'adapte à vos métiers
@@ -74,7 +84,9 @@ const UseCases = () => {
               className="bg-bgLite p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition flex flex-col items-center text-center h-full"
             >
               <useCase.icon className="h-8 w-8 text-primary mb-4" aria-hidden />
-              <h3 className="text-xl font-semibold text-primary mb-2">{useCase.title}</h3>
+              <h3 className="text-xl font-semibold text-primary mb-2">
+                {useCase.title}
+              </h3>
               <p className="text-gray-600">{useCase.description}</p>
             </motion.div>
           </FadeIn>
